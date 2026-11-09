@@ -1,0 +1,23 @@
+from langchain_core.prompts import promptTemplate
+prompt=PromptTemplate.from_template(
+	"write a welco msg {name}"
+)
+
+formatted_prompt=prompt.format(name="V")
+print(formatted_prompt")
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+from langchain _core.prompts import ChatPromptTemplate
+chat=ChatPromptTemplate.from_template(
+	"your are help assistant" explain{topic}"
+)
+chatted=chat.format_messages(
+	topic="ss"
+	)
+print(messages)
+
+from langchain import ChatOpenAI
+llm=ChatOpenAI(model="gpt-40-mini")
+response=llm.invoke(result)
+print(response.content)

@@ -1,0 +1,25 @@
+from pydantic import BaseModel,Field
+from typing import Optional,List
+
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import PydanticOupputParser
+
+class Student(BaseModel):
+
+	name:str=Field(default="DSDSD",descriptions="assa")
+	age:int=Field(default=23,gt=18,lt=60)
+	course:str
+	city:str=Field(default="da")
+	skills:List[str]=Field(default="a","aqs"]
+	
+prompt=PromptTemplate(
+	template="generate student details.\n{format_instructions}",
+)
+
+
+llm=ChatOpenAI(model="gpt-40-mini",temperature=0)
+parser=PydanticOutputParser(pydantic_object=Student)
+chain=prompt |llm |parser
+response=chain.invoke({})
+print(response)

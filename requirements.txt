@@ -1,0 +1,11 @@
+langchain
+langchain-openai
+langchain-groq
+langgraph
+python-dotenv
+fastapi
+uvicorn
+streamlit
+pytest
+faiss-cpu
+pydantic
